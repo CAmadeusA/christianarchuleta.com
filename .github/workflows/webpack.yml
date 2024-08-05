@@ -26,4 +26,6 @@ jobs:
       run: |
         npm install
         npm install -g @angular/cli@13.3.11
+        git config user.email "christianarchuleta@gmail.com"
+        git config user.name "Christian Archuleta"
         ng deploy --base-href=/christianarchuleta.com/ --no-silent
