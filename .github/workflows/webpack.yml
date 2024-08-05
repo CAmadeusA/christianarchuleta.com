@@ -2,9 +2,9 @@ name: NodeJS with Webpack
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -15,17 +15,26 @@ jobs:
         node-version: [18.x, 20.x, 22.x]
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Build
-      run: |
-        npm install
-        npm install -g @angular/cli@13.3.11
-        git config user.email "christianarchuleta@gmail.com"
-        git config user.name "Christian Archuleta"
-        ng deploy --base-href=/christianarchuleta.com/ --no-silent
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli@13.3.11
+
+      - name: Configure Git
+        run: |
+          git config user.email "christianarchuleta@gmail.com"
+          git config user.name "Christian Archuleta"
+
+      - name: Build and Deploy
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          ng deploy --base-href=/christianarchuleta.com/ --no-silent --repo=https://x-access-token:${GH_TOKEN}@github.com/CAmadeusA/christianarchuleta.com.git
