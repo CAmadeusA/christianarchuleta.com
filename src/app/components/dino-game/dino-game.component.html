@@ -1,0 +1,6 @@
+<div class="game-container" (click)="onJump()">
+    <div class="overlay" *ngIf="!isGameStarted" (click)="startGame()">{{overlayText}}</div>
+    {{this.score}} Points
+    <div #dino class="dino" [ngClass]="{'jump': isJumping}"></div>
+    <div #cactus class="cactus" [ngStyle]="{'animation': isRunning && isGameStarted ? 'moveCactus 1.5s infinite linear' : 'none'}"></div>
+</div>

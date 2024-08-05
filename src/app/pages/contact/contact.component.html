@@ -1,0 +1,53 @@
+<h2>// Contact Me</h2>
+<p>Whether you want to hire me, have feedback, or just want to say hello, please fill out the form
+    below. This will auto-format an email for you to send me.</p>
+<hr>
+<div class="container my-4">
+    <form [formGroup]="contactForm">
+        <div class="mb-3">
+            <label for="firstName" class="form-label">First Name<span class="text-danger">*</span></label>
+            <input #firstnameinput type="text" id="firstName" class="form-control shadow-sm" formControlName="firstName"
+                aria-describedby="firstNameHelp" required>
+            <div id="firstNameHelp" class="form-text visually-hidden">Please enter your first name.</div>
+            <div *ngIf="contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched"
+                class="text-danger">
+                First name is required.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name<span class="text-danger">*</span></label>
+            <input type="text" id="lastName" class="form-control shadow-sm" formControlName="lastName"
+                aria-describedby="lastNameHelp" required>
+            <div id="lastNameHelp" class="form-text visually-hidden">Please enter your last name.</div>
+            <div *ngIf="contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched"
+                class="text-danger">
+                Last name is required.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="reasonForContact" class="form-label">Reason for Contact<span
+                    class="text-danger">*</span></label>
+            <select id="reasonForContact" class="form-control shadow-sm" formControlName="reasonForContact" required>
+                <option value="" disabled selected>Select a reason</option>
+                <option value="Hello">Just saying Hello!</option>
+                <option>Inquiry</option>
+                <option>Feedback</option>
+            </select>
+            <div *ngIf="contactForm.get('reasonForContact')?.invalid && contactForm.get('reasonForContact')?.touched"
+                class="text-danger">
+                Please select a reason for contact.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="customMessage" class="form-label">Message<span class="text-danger">*</span></label>
+            <textarea id="customMessage" class="form-control shadow-sm" formControlName="customMessage" rows="5"
+                aria-describedby="customMessageHelp" required></textarea>
+            <div id="customMessageHelp" class="form-text visually-hidden">Please enter your message.</div>
+            <div *ngIf="contactForm.get('customMessage')?.invalid && contactForm.get('customMessage')?.touched"
+                class="text-danger">
+                Message is required.
+            </div>
+        </div>
+        <a [href]="emailGenerateUrl" class="btn btn-primary shadow-sm" [class.disabled]="contactForm.invalid">Send Message</a>
+    </form>
+</div>

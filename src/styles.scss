@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+// Primary color: #4EA76C
+$primary: #5378A0;
+$secondary: #CBC789;
+$success: #4EA76C;
+$info: #0dcaf0;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #212529;
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark
+);
+
+$box-shadow-sm: 0 .0625rem .125rem rgba(0, 0, 0, .25);
+$box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .5);
+$box-shadow-lg: 0 .5rem 1rem rgba(0, 0, 0, .75);
+// Then import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+a, button, input {
+    cursor:pointer;
+}
+
+@font-face {
+    font-family: 'Mechanical';
+    src: url(./assets/mechanical-font.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Mechanical' !important;
+    background-color: $primary;
+}

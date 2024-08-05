@@ -1,0 +1,36 @@
+.timeline-container {
+    border-left: 3px dotted #5378A0; /* Adjust the color to match your theme */
+    padding-left: 20px;
+    margin-left: 10px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .timeline-content {
+    position: relative;
+    padding: 10px 0;
+  }
+  
+  .timeline-dot {
+    position: absolute;
+    left: -9px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: #5378A0; /* Adjust the color to match your theme */
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .timeline-container:hover {
+    border-left: 5px dotted #5378A0; /* Enlarge the dotted border on hover */
+    padding-left: 22px; /* Adjust padding to maintain alignment */
+  }
+  
+  .timeline-container:hover .timeline-dot {
+    width: 20px;
+    height: 20px;
+    left: -13px; /* Adjust position to keep the dot centered */
+  }
+  
