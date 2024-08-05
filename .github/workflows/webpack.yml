@@ -25,5 +25,5 @@ jobs:
     - name: Build
       run: |
         npm install
-        npm install -g @angular/cli
+        npm install -g @angular/cli@13.3.11
         ng deploy --base-href=/christianarchuleta.com/        ng deploy --base-href=/christianarchuleta.com/
