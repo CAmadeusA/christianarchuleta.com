@@ -1,0 +1,208 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Import Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// Import variables
+@import 'variables';
+
+// Custom global styles
+:root {
+  --primary-color: #{$blue};
+  --secondary-color: #{$red};
+  --accent-color: #{$yellow};
+  --success-color: #{$green};
+  --text-color: #{$black};
+  --bg-color: #{$white};
+  --primary-gradient: linear-gradient(135deg, #{$blue} 0%, #{$red} 50%, #{$yellow} 100%);
+  --secondary-gradient: linear-gradient(135deg, #{$red} 0%, #{$yellow} 100%);
+  --success-gradient: linear-gradient(135deg, #{$green} 0%, #{$yellow} 100%);
+  --info-gradient: linear-gradient(135deg, #{$blue} 0%, #{$green} 100%);
+}
+
+// Bootstrap Icons
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css');
+
+// Global styles
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+}
+
+// Override Bootstrap default colors
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.btn-primary:hover {
+  background-color: #256d8f !important; /* Darker shade of blue #2E86AB */
+  border-color: #256d8f !important;
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.border-primary {
+  border-color: var(--primary-color) !important;
+}
+
+.alert-primary {
+  background-color: #e6f0f7 !important; /* Lightened shade of blue #2E86AB */
+  border-color: #cfe3f0 !important; /* Lightened shade of blue #2E86AB */
+  color: var(--text-color) !important;
+}
+
+// Section spacing
+section {
+  padding: 80px 0;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2.5rem;
+  }
+  
+  .btn-lg {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+// Animation classes
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Card hover effects
+.card {
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+// Section headers
+.section-header {
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+// Utility classes
+.text-primary-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+}
+
+.border-radius-lg {
+  border-radius: 15px !important;
+}
+
+// Loading animation
+.loading-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
