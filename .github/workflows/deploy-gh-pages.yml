@@ -18,6 +18,8 @@ env:
   # Override BASE_HREF with a repository variable if your Pages site lives at a different base path.
   BASE_HREF: ${{ vars.BASE_HREF || '/' }}
   DIST_DIR: dist/personal-site/browser
+  # Set CUSTOM_DOMAIN to create a CNAME file during deploy (e.g., "christianarchuleta.com").
+  CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN || '' }}
 
 jobs:
   build-and-deploy:
@@ -38,6 +40,11 @@ jobs:
 
       - name: Build Angular app
         run: npm run build -- --configuration production --base-href ${BASE_HREF}
+
+      - name: Add CNAME for custom domain
+        if: env.CUSTOM_DOMAIN != ''
+        run: |
+          echo "${CUSTOM_DOMAIN}" > "${DIST_DIR}/CNAME"
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
