@@ -37,7 +37,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
             <div class="hero-image text-center mt-3 mt-lg-0">
               <div class="profile-card">
                 <div class="profile-circle">
-                  <img src="/PFP.png" alt="Christian Archuleta - Senior Software Engineer and Technical Consultant at CGI Federal" class="img-fluid rounded-circle"/>
+                  <img src="PFP.png" alt="Christian Archuleta - Senior Software Engineer and Technical Consultant at CGI Federal" class="img-fluid rounded-circle"/>
                 </div>
                 <div class="profile-stats mt-4">
                   <div class="row">

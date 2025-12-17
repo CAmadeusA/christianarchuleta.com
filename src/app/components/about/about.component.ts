@@ -24,7 +24,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
             <div class="about-image">
               <div class="profile-photo">
                 <div class="photo-overlay">
-                  <img src="/PFP.png" alt="Christian Archuleta - Professional headshot of Senior Software Engineer" class="img-fluid rounded-circle"/>
+                  <img src="PFP.png" alt="Christian Archuleta - Professional headshot of Senior Software Engineer" class="img-fluid rounded-circle"/>
                 </div>
               </div>
               <div class="about-stats mt-4">
