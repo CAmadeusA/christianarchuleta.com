@@ -154,7 +154,7 @@ export class ProjectsComponent {
     {
       title: 'Federal Financial Systems - Full-Stack Development',
       description: 'Developing and maintaining complex full-stack features using Angular 21, Java Spring Boot, Node.js, and C++ for CGI’s federal ERP platforms. Building reusable libraries and compliant UI components with full Section 508 accessibility.',
-      image: '/Momentum.png',
+      image: 'Momentum.png',
       tags: ['Angular 21', 'Java Spring Boot', 'Node.js', 'C++', 'Section 508', 'Microservices'],
       date: '2024 - Present',
       category: 'Federal ERP Platform',
@@ -164,7 +164,7 @@ export class ProjectsComponent {
     {
       title: 'Federal Healthcare Enrollment Platform - Modernization',
       description: 'Delivered a multi-year modernization initiative for a major federal healthcare enrollment system. Re-architected legacy Angular codebase into micro-frontends and shared libraries. Implemented performance optimizations via lazy loading, import maps, and Webpack tuning.',
-      image: '/PECOS2.0.jpg',
+      image: 'PECOS2.0.jpg',
       tags: ['Angular 10+', 'Node.js', 'Express.js', 'Micro-frontends', 'Elasticsearch', 'PDF Services'],
       date: '2022 - 2024',
       category: 'Healthcare Platform',
@@ -174,7 +174,7 @@ export class ProjectsComponent {
     {
       title: 'Federal Healthcare Enrollment - Frontend Development',
       description: 'Contributed to the frontend development of a modernized federal healthcare enrollment system. Developed responsive, accessible Angular components from UX designs, aligned with Section 508 compliance standards.',
-      image: '/PECOS2.0.jpg',
+      image: 'PECOS2.0.jpg',
       tags: ['Angular', 'Java Spring Boot', 'Section 508', 'Agile/Scrum', 'API Integration'],
       date: '2020 - 2022',
       category: 'Healthcare System',
@@ -184,7 +184,7 @@ export class ProjectsComponent {
     {
       title: 'Omnichannel Retail Platform - Mobile & Web',
       description: 'Contributed to web and mobile application development focused on improving user experience and performance across omni-channel platforms. Designed and implemented RESTful APIs to support data integration and enhance backend functionality.',
-      image: '/JCPenney.jpg',
+      image: 'JCPenney.jpg',
       tags: ['Android', 'RESTful APIs', 'Bluetooth', 'Wi-Fi Beacons', 'Mobile Development'],
       date: '2018',
       category: 'Retail Platform',
@@ -195,9 +195,9 @@ export class ProjectsComponent {
 
   getProjectImageAlt(project: any): string {
     const altTexts: { [key: string]: string } = {
-      '/Momentum.png': 'Momentum Enterprise Suite - Federal financial management system interface',
-      '/PECOS2.0.jpg': 'PECOS 2.0 healthcare enrollment platform user interface',
-      '/JCPenney.jpg': 'JCPenney omnichannel retail platform interface'
+      'Momentum.png': 'Momentum Enterprise Suite - Federal financial management system interface',
+      'PECOS2.0.jpg': 'PECOS 2.0 healthcare enrollment platform user interface',
+      'JCPenney.jpg': 'JCPenney omnichannel retail platform interface'
     };
     
     return altTexts[project.image] || `${project.title} project screenshot`;
